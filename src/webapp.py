@@ -1,17 +1,16 @@
 #!flask/bin/python
 # -*- coding: utf-8 -*-
 
-from app import app
 import sys
-from config import *
 import os
+from app import app
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-debug = False
+DEBUG = False
 
 if 'DEBUG' in os.environ and os.environ['DEBUG'] == "1":
-     debug = True
+    DEBUG = True
 
-app.run(debug=debug,host='0.0.0.0', port=80)
+app.run(debug=DEBUG, host='0.0.0.0', port=80)
