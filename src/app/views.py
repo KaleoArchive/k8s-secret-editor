@@ -12,6 +12,9 @@ import pprint
 import base64
 import os
 from config import *
+import urllib3
+from urllib3.exceptions import InsecureRequestWarning
+urllib3.disable_warnings(InsecureRequestWarning)
 
 def check_auth(username, password):
     """This function is called to check if a username /
